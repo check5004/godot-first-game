@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "song_title": "Test Song - Basic Pattern",
+    "artist": "Test Artist",
+    "bpm": 120.0,
+    "offset_sec": 2.0,
+    "song_path": "res://assets/music/test_song.wav",
+    "difficulty": "Normal",
+    "chart_author": "System",
+    "created_date": "2025-09-30"
+  },
+  "notes": [
+    { "beat": 0.0, "lane": 0 },
+    { "beat": 0.5, "lane": 1 },
+    { "beat": 1.0, "lane": 2 },
+    { "beat": 1.5, "lane": 3 },
+    { "beat": 2.0, "lane": 0 },
+    { "beat": 2.0, "lane": 2 },
+    { "beat": 2.5, "lane": 1 },
+    { "beat": 2.5, "lane": 3 },
+    { "beat": 3.0, "lane": 0 },
+    { "beat": 3.5, "lane": 1 },
+    { "beat": 4.0, "lane": 2 },
+    { "beat": 4.5, "lane": 3 }
+  ]
+}
