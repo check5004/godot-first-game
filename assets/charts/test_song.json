@@ -1,13 +1,11 @@
 {
   "metadata": {
-    "song_title": "Test Song - Basic Pattern",
+    "song_title": "Test Song",
     "artist": "Test Artist",
     "bpm": 120.0,
     "offset_sec": 2.0,
     "song_path": "res://assets/music/test_song.wav",
-    "difficulty": "Normal",
-    "chart_author": "System",
-    "created_date": "2025-09-30"
+    "difficulty": "Normal"
   },
   "notes": [
     { "beat": 0.0, "lane": 0 },
@@ -15,12 +13,36 @@
     { "beat": 1.0, "lane": 2 },
     { "beat": 1.5, "lane": 3 },
     { "beat": 2.0, "lane": 0 },
-    { "beat": 2.0, "lane": 2 },
     { "beat": 2.5, "lane": 1 },
-    { "beat": 2.5, "lane": 3 },
-    { "beat": 3.0, "lane": 0 },
-    { "beat": 3.5, "lane": 1 },
-    { "beat": 4.0, "lane": 2 },
-    { "beat": 4.5, "lane": 3 }
+    { "beat": 3.0, "lane": 2 },
+    { "beat": 3.5, "lane": 3 },
+    { "beat": 4.0, "lane": 1 },
+    { "beat": 4.5, "lane": 2 },
+    { "beat": 5.0, "lane": 0 },
+    { "beat": 5.5, "lane": 3 },
+    { "beat": 6.0, "lane": 1 },
+    { "beat": 6.5, "lane": 2 },
+    { "beat": 7.0, "lane": 0 },
+    { "beat": 7.5, "lane": 3 },
+    { "beat": 8.0, "lane": 0 },
+    { "beat": 8.0, "lane": 1 },
+    { "beat": 8.5, "lane": 2 },
+    { "beat": 8.5, "lane": 3 },
+    { "beat": 9.0, "lane": 0 },
+    { "beat": 9.5, "lane": 1 },
+    { "beat": 10.0, "lane": 2 },
+    { "beat": 10.5, "lane": 3 },
+    { "beat": 11.0, "lane": 1 },
+    { "beat": 11.5, "lane": 2 },
+    { "beat": 12.0, "lane": 0 },
+    { "beat": 12.5, "lane": 3 },
+    { "beat": 13.0, "lane": 0 },
+    { "beat": 13.5, "lane": 1 },
+    { "beat": 14.0, "lane": 2 },
+    { "beat": 14.5, "lane": 3 },
+    { "beat": 15.0, "lane": 0 },
+    { "beat": 15.5, "lane": 1 },
+    { "beat": 16.0, "lane": 2 },
+    { "beat": 16.5, "lane": 3 }
   ]
 }

@@ -42,13 +42,13 @@ func reset_game() -> void:
 func add_judgement(judgement: String, delta_time: float) -> void:
 	"""判定を追加してスコアを計算"""
 	judgement_counts[judgement] += 1
-	
+
 	if judgement == "MISS":
 		current_combo = 0
 	else:
 		current_combo += 1
 		max_combo = max(max_combo, current_combo)
-	
+
 	# スコア計算（コンボ倍率適用）
 	var base_score := 0
 	match judgement:
@@ -56,20 +56,20 @@ func add_judgement(judgement: String, delta_time: float) -> void:
 		"GOOD": base_score = GameConfig.SCORE_GOOD
 		"OK": base_score = GameConfig.SCORE_OK
 		"MISS": base_score = GameConfig.SCORE_MISS
-	
+
 	var multiplier := GameConfig.get_combo_multiplier(current_combo)
 	var final_score := int(base_score * multiplier)
 	current_score += final_score
-	
+
 	# シグナル発火
 	score_updated.emit(current_score)
 	combo_changed.emit(current_combo)
 	judgement_made.emit(judgement, delta_time)
-	
+
 	# 精度計算
 	var total := float(judgement_counts.values().reduce(func(a, b): return a + b, 0))
 	if total > 0:
-		var accuracy := (judgement_counts["PERFECT"] + judgement_counts["GOOD"] * 0.7 + judgement_counts["OK"] * 0.4) / total * 100.0
+		var accuracy: float = (judgement_counts["PERFECT"] + judgement_counts["GOOD"] * 0.7 + judgement_counts["OK"] * 0.4) / total * 100.0
 		accuracy_updated.emit(accuracy)
 
 func get_accuracy() -> float:
