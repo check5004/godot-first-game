@@ -1,0 +1,65 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Godot 3 specific ignores (for compatibility)
+.import/
+
+# Exported binaries and PCK files
+*.executable
+*.pck
+*.x86_64
+*.x86
+*.exe
+*.apk
+*.dmg
+
+# Export presets (may contain sensitive data or environment-specific settings)
+export_presets.cfg
+
+# Mono-specific ignores (C# projects)
+.mono/
+data_*/
+mono_crash.*.json
+
+# System/tool-specific ignores
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+## Linux
+*~
+.directory
+
+## IDEs and Editors
+### Visual Studio Code
+.vscode/
+### JetBrains IDEs (Rider, IntelliJ, etc.)
+.idea/
+### Visual Studio
+.vs/
+### Vim
+*.swp
+*.swo
+*~
+### Emacs
+\#*\#
+### Sublime Text
+*.sublime-workspace
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Temporary or build files
+*.tmp
+*.bak
+*.cache
