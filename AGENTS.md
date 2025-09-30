@@ -15,6 +15,7 @@ Kiro-style Spec Driven Development implementation on AI-DLC (AI Development Life
 **Specs** (`.kiro/specs/`) - Formalize development process for individual features
 
 ### Active Specifications
+- **project-setup**: Godotリズムゲームプロジェクトの初期セットアップ（ディレクトリ構造、AutoLoadスクリプト、Input Map設定）
 - Check `.kiro/specs/` for active specifications
 - Use `/kiro/spec-status [feature-name]` to check progress
 
