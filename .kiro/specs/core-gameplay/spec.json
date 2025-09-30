@@ -1,0 +1,22 @@
+{
+  "feature_name": "core-gameplay",
+  "created_at": "2025-09-30T13:58:00+09:00",
+  "updated_at": "2025-09-30T14:15:00+09:00",
+  "language": "ja",
+  "phase": "design_generated",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": true
+    },
+    "design": {
+      "generated": true,
+      "approved": false
+    },
+    "tasks": {
+      "generated": false,
+      "approved": false
+    }
+  },
+  "ready_for_implementation": false
+}
