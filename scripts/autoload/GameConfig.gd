@@ -2,10 +2,10 @@
 extends Node
 
 # ===== タイミング判定ウィンドウ（秒） =====
-const PERFECT_WINDOW: float = 0.025  # ±25ms
-const GOOD_WINDOW: float = 0.050     # ±50ms
-const OK_WINDOW: float = 0.080       # ±80ms
-const MISS_WINDOW: float = 0.150     # ±150ms（これ以上は無視）
+const PERFECT_WINDOW: float = 0.050  # ±50ms（緩和）
+const GOOD_WINDOW: float = 0.100     # ±100ms（緩和）
+const OK_WINDOW: float = 0.150       # ±150ms（緩和）
+const MISS_WINDOW: float = 0.200     # ±200ms（MISS判定ウィンドウ）
 
 # ===== スコアリング =====
 const SCORE_PERFECT: int = 100

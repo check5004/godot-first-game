@@ -12,7 +12,11 @@ var note_queue: Array[Dictionary] = []
 var active_notes: Array[Node] = []
 
 # 設定
-var spawn_lead_time: float = 2.0  # ノート先行生成時間（秒）
+# ノート先行生成時間を正しく計算: 移動距離 ÷ 速度
+# 移動距離: 650px（y=-50 → y=600）
+# 速度: 600px/s
+# 時間: 650 ÷ 600 = 1.083秒 → 余裕を持って1.1秒
+var spawn_lead_time: float = 1.1  # ノート先行生成時間（秒）
 
 ## 譜面データ設定
 ## 事前条件: chart_dataに有効なmetadata（bpm, offset_sec）とnotesを含む

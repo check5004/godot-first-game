@@ -75,15 +75,24 @@ func _on_input_received(lane_index: int) -> void:
 		judgement = "GOOD"
 	elif abs_delta <= GameConfig.OK_WINDOW:
 		judgement = "OK"
+	elif abs_delta <= GameConfig.MISS_WINDOW:
+		# MISS判定ウィンドウ内：ノーツを消してMISS判定
+		judgement = "MISS"
 	else:
-		# ウィンドウ外（無視）
+		# MISS判定ウィンドウ外（完全に早すぎる/遅すぎる）：無視
 		return
 
-	# 判定成功時のログ（デバッグ用）
+	# 判定ログ（デバッグ用）
 	print("Lane %d: %s (delta: %.3fs)" % [lane_index, judgement, delta_time])
 
 	# ScoreManagerに判定結果を通知
 	ScoreManager.add_judgement(judgement, delta_time)
 
 	# ノートのヒット処理を呼び出し
-	closest_note.hit(judgement)
+	if judgement == "MISS":
+		# MISS時は即座に削除（視覚的フィードバック）
+		closest_note.is_hit = true
+		closest_note.queue_free()
+	else:
+		# 通常のヒット処理
+		closest_note.hit(judgement)

@@ -6,14 +6,12 @@ extends Node2D
 # 状態
 var precise_time_sec: float = 0.0
 var current_chart: Dictionary = {}
-var debug_mode: bool = false
 
 # ノード参照
 @onready var music_player := $MusicPlayer as AudioStreamPlayer
 @onready var note_spawner := $NoteSpawner as Node2D
 @onready var judgement_system := $JudgementSystem as Node
 @onready var ui := $UI as CanvasLayer
-@onready var debug_display := $UI/DebugDisplay as Label
 
 ## 初期化処理
 ## 事前条件: ChartLoader, ScoreManagerがAutoLoad登録済み
@@ -46,10 +44,6 @@ func _ready() -> void:
 
 	music_player.stream = audio_stream
 
-	# デバッグ表示の初期化
-	if debug_display:
-		debug_display.visible = debug_mode
-
 	# 短い遅延後に音楽再生開始
 	await get_tree().create_timer(0.5).timeout
 	music_player.play()
@@ -73,34 +67,10 @@ func _process(_delta: float) -> void:
 	note_spawner.update_time(precise_time_sec)
 	judgement_system.update_time(precise_time_sec)
 
-	# デバッグ表示更新
-	if debug_mode:
-		_update_debug_display()
-
-## デバッグ表示更新
-## 事前条件: GameConfig.debug_mode == true
-## 事後条件: DebugDisplay.text更新
-func _update_debug_display() -> void:
-	if debug_display == null:
-		return
-
-	var fps := Engine.get_frames_per_second()
-	var latency_ms := AudioServer.get_output_latency() * 1000.0
-	var active_notes: int = note_spawner.get_active_note_count()
-
-	debug_display.text = "Time: %.3f\nFPS: %d\nLatency (ms): %.1f\nActive Notes: %d" % [
-		precise_time_sec,
-		fps,
-		latency_ms,
-		active_notes
-	]
-
 ## デバッグ切替入力処理
 ## 事前条件: "toggle_debug" アクション定義済み
-## 事後条件: GameConfig.debug_mode反転、表示切替
+## 事後条件: GameConfig.debug_mode反転
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_debug"):
-		debug_mode = not debug_mode
-		if debug_display:
-			debug_display.visible = debug_mode
-		print("Debug mode: ", debug_mode)
+		GameConfig.debug_mode = not GameConfig.debug_mode
+		print("Debug mode: ", GameConfig.debug_mode)
