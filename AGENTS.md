@@ -17,6 +17,7 @@ Kiro-style Spec Driven Development implementation on AI-DLC (AI Development Life
 ### Active Specifications
 - **project-setup**: Godotリズムゲームプロジェクトの初期セットアップ（ディレクトリ構造、AutoLoadスクリプト、Input Map設定）
 - **core-gameplay**: Phase 1: コアゲームプレイの実装（時間同期、ノート生成、入力処理、判定システム）
+- **ui-implementation**: Phase 2: UI実装（UIController、スコア/コンボ表示、判定アニメーション、精度/グレード表示）
 - Check `.kiro/specs/` for active specifications
 - Use `/kiro/spec-status [feature-name]` to check progress
 
